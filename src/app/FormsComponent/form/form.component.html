@@ -1,0 +1,37 @@
+<div >
+  <div >
+    <label>Название модели</label>
+    <input type="text"  name="title"
+           [(ngModel)]="getPhone().title" #phoneTitle="ngModel"
+            (ngModelChange)="onTitleChange()"
+    />
+  </div>
+  <div >
+    <label>Цена</label>
+    <input type="number"  name="price"
+           [(ngModel)]="getPhone().price" #phonePrice="ngModel" />
+  </div>
+  <div >
+    <label>Производитель</label>
+    <select  name="company"
+            [(ngModel)]="getPhone().company" #phoneCompany="ngModel">
+      <option  *ngFor="let comp of getCompanies()" [value]="comp">
+        {{comp}}
+      </option>
+    </select>
+  </div>
+  <div >
+    <button class (click)="addPhone(phoneTitle, phonePrice, phoneCompany)">
+      Добавить
+    </button>
+  </div>
+  <div>
+    <p>{{phoneTitle.name}} : {{phoneTitle.model}}</p>
+    <p>{{phonePrice.name}} : {{phonePrice.model}}</p>
+    <p>{{phoneCompany.name}} : {{phoneCompany.model}}</p>
+  </div>
+  <ul>
+    <li>All phone</li>
+    <li *ngFor="let phone of getPhones()">{{phone.company}},{{phone.price}},{{phone.title}}</li>
+  </ul>
+</div>
