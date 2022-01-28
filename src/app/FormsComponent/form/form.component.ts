@@ -14,26 +14,14 @@ export class FormComponent {
   constructor(private _data: DataService) {
   }
 
-  getPhone(): Phone {
-    return this._data.getPhone()
-  }
 
-  getCompanies(): string[] {
-    return this._data.getCompanies()
+  get data(): DataService {
+    return this._data;
   }
-
-  addPhone(title:NgModel, price:NgModel, company:NgModel ) {
-
-    this._data.getPhones().push(this.getPhone())
-  }
-  getPhones(): Phone[]{
-    return this._data.getPhones()
-  }
-
 
   onTitleChange() {
-    if(this.getPhone().title=="нет ") {
-      this.getPhone().title = ""
+    if(this.data.phone.title=="нет ") {
+      this.data.phone.title = ""
       alert("не извстно");
     }
   }
