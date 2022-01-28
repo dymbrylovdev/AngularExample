@@ -1,34 +1,24 @@
+
 import {Injectable} from '@angular/core';
 import {NgModel} from "@angular/forms";
+import {User} from "../user";
 
-export class Phone {
-  constructor(public title: string,
-              public price: number,
-              public company: string)
-  { }
-}
+
 
 @Injectable()
-export class DataService {
-  private _phones : Phone[] = []
-  private _companies: string[] = ["Apple", "Huawei", "Xiaomi", "Samsung", "LG", "Motorola", "Alcatel"];
-  private _phone: Phone = new Phone("",0,"")
-  constructor(){}
-
-
-  get phones(): Phone[] {
-    return this._phones;
+export class DataUserService {
+  private _users : User[] =  [
+    new User("Naikita", "nikita@mail.ru","9835370217"),
+    new User("Mihail", "mihail@mail.ru","9835370217"),
+    new User("Vlad", "valad@mail.ru","9835370217"),
+    new User("Gunga", "gunga@mail.ru","9835370217"),
+    new User("Igor", "igor@mail.ru","9835370217"),
+  ]
+  constructor() {
   }
 
-  get companies(): string[] {
-    return this._companies;
+  get users(): User[] {
+    return this._users;
   }
 
-  get phone(): Phone {
-    return this._phone;
-  }
-
-  addPhone(title:NgModel, price:NgModel, company:NgModel ) {
-      this.phones.push(this.phone)
-    }
 }

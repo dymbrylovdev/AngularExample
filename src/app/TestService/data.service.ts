@@ -1,25 +1,34 @@
 import {Injectable} from '@angular/core';
-import {LogService} from "./LogService.service";
+import {NgModel} from "@angular/forms";
 
+export class Phone {
+  constructor(public title: string,
+              public price: number,
+              public company: string)
+  { }
+}
 
 @Injectable()
-export class DataService{
+export class DataService {
+  private _phones : Phone[] = []
+  private _companies: string[] = ["Apple", "Huawei", "Xiaomi", "Samsung", "LG", "Motorola", "Alcatel"];
+  private _phone: Phone = new Phone("",0,"")
+  constructor(){}
 
-  private data: string[] = [ "Apple iPhone XR", "Samsung Galaxy S9",  "Nokia 9"];
-  constructor(private _logService: LogService){
 
+  get phones(): Phone[] {
+    return this._phones;
   }
 
-  getData(): string[] {
-
-    this._logService.write("операция получения данных");
-    return this.data;
-  }
-  addData(name: string){
-
-    this.data.push(name);
-    this._logService.write("операция добавления данных");
+  get companies(): string[] {
+    return this._companies;
   }
 
+  get phone(): Phone {
+    return this._phone;
+  }
 
+  addPhone(title:NgModel, price:NgModel, company:NgModel ) {
+    this.phones.push(this.phone)
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "userList":
+  [{
+    "userName": "Naikita",
+    "userMail": "nikita@mail.ru",
+    "userPhone": "9835170217"
+  },{
+    "userName": "Mihail",
+    "userMail": "mihail@mail.ru",
+    "userPhone": "9835270217"
+  },{
+    "userName": "Vlad",
+    "userMail": "valad@mail.ru",
+    "userPhone": "9835370217"
+  },{
+    "userName": "Gunga",
+    "userMail": "gunga@mail.ru",
+    "userPhone": "9835470217"
+  }
+  ]
+}
